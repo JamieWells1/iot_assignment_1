@@ -35,6 +35,9 @@ def create_project():
         meeting_date = input('What date is the meeting for this stage? ')
         add_attendees(stage_attendees, stage, meeting_date)
         touch('meeting_notes.txt')
+        with open('meeting_notes.txt', 'w') as f:
+            f.write("# Here's where your meeting notes will go")
+        f.close()
         touch('stage_info.md')
         print('\nStage created!\n')
         user_input = input('Project structure created! (s) : Add another stage | (w) : Add another workstream | (r) : Return to menu ')
@@ -53,6 +56,9 @@ def create_project():
         meeting_date = input('What date is the meeting for this workstream? ')
         add_attendees(workstream_attendees, workstream, meeting_date)
         touch('meeting_notes.txt')
+        with open('meeting_notes.txt', 'w') as f:
+            f.write("# Here's where your meeting notes will go")
+        f.close()
         touch('workstream_info.md')
         print('\nWorkstream created!\n')
         user_input = input('Project structure created! (s) : Add another stage | (w) : Add another workstream | (r) : Return to menu ')
